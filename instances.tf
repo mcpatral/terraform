@@ -8,7 +8,7 @@ resource "aws_instance" "bastion-host" {
   key_name          = aws_key_pair.utc-key.id
   availability_zone = var.ZONE1
   security_groups   = [aws_security_group.Bastion.id]
-  subnet_id = var.PubSub1
+  subnet_id = "${var.PubSub1}"
 
 
   tags = {

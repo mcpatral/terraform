@@ -1,7 +1,13 @@
-variable "REGION" {
+variable REGION {
   default = "us-east-1"
 }
-
+variable "key_name" {
+  default = "utc-key.pem"
+}
+variable pubkey {
+  default = "utc-key.pem.pub"
+  
+}
 variable "NAME" {
   default = "utc"
 }
@@ -26,18 +32,21 @@ variable "PrivSub2" {
 variable "PrivSub3" {
   default = "10.0.3.0/24"
 }
+variable "PrivSub4" {
+  default = "10.0.4.0/24"
+}
 variable "PubSub1" {
-  default = "10.0.101.0/24"
+  default = "10.0.5.0/24"
 }
 variable "PubSub2" {
-  default = "10.0.102.0/24"
+  default = "10.0.6.0/24"
 
 }
-variable "AMIS" {
-  type = map(any)
+variable AMIS {
+  type = map
   default = {
     us-east-1 = "ami-0b5eea76982371e91"
     us-east-2 = "ami-0a606d8395a538502"
   }
-
+  
 }
