@@ -5,3 +5,4 @@ utc-key.pem
 utc-key.pem.pub
 .terraform
 terraform
+.gitignore.swp
