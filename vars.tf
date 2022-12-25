@@ -1,3 +1,6 @@
+variable REGION {
+  default = "us-east-1"
+}
 variable "NAME" {
   default = "utc"
 }
