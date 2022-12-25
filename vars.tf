@@ -1,6 +1,7 @@
-variable REGION {
+variable "REGION" {
   default = "us-east-1"
 }
+
 variable "NAME" {
   default = "utc"
 }
@@ -30,5 +31,13 @@ variable "PubSub1" {
 }
 variable "PubSub2" {
   default = "10.0.102.0/24"
+
+}
+variable "AMIS" {
+  type = map(any)
+  default = {
+    us-east-1 = "ami-0b5eea76982371e91"
+    us-east-2 = "ami-0a606d8395a538502"
+  }
 
 }

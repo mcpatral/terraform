@@ -48,7 +48,7 @@ resource "aws_security_group" "Bastion" {
 
   }
 
- tags = {
+  tags = {
     env  = "Dev"
     team = "config management"
   }
@@ -58,17 +58,17 @@ resource "aws_security_group" "App-server" {
   description = "security group for app-server sg"
 
   ingress {
-    description    = "Allow ssh traffic to my app-server"
-    from_port      = 80
-    to_port        = 80
-    protocol       = "tcp"
+    description     = "Allow ssh traffic to my app-server"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [aws_security_group.Bastion.id]
-    }
-    ingress {
-    description    = "Allow ssh traffic to my app-server"
-    from_port      = 22
-    to_port        = 22
-    protocol       = "tcp"
+  }
+  ingress {
+    description     = "Allow ssh traffic to my app-server"
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
     security_groups = [aws_security_group.Bastion.id]
   }
   egress {
@@ -89,10 +89,10 @@ resource "aws_security_group" "Database-sg" {
   description = "security group for app-server sg"
 
   ingress {
-    description    = "Allow ssh traffic to my Database"
-    from_port      = 3306
-    to_port        = 3306
-    protocol       = "tcp"
+    description     = "Allow ssh traffic to my Database"
+    from_port       = 3306
+    to_port         = 3306
+    protocol        = "tcp"
     security_groups = [aws_security_group.App-server.id]
   }
   egress {
